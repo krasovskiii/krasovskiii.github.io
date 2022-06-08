@@ -3,12 +3,12 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Debug:Refactor</title>
+  <title>Tag: by-talk | Debug:Refactor</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="万物并作,吾以观复">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Debug:Refactor">
-<meta property="og:url" content="https://github.com/krasovskiii/krasovskiii.github.io/index.html">
+<meta property="og:url" content="https://github.com/krasovskiii/krasovskiii.github.io/tags/by-talk/index.html">
 <meta property="og:site_name" content="Debug:Refactor">
 <meta property="og:description" content="万物并作,吾以观复">
 <meta property="og:locale" content="en_US">
@@ -31,9 +31,6 @@
   <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   
-    
-    
-  
   
       <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
   
@@ -45,10 +42,10 @@
           rootUrl: '/',
           fancybox: true,
           animate: true,
-          isHome: true,
+          isHome: false,
           isPost: false,
           isArchive: false,
-          isTag: false,
+          isTag: true,
           isCategory: false,
           open_in_new: false
       }
@@ -224,71 +221,56 @@
 </nav>
       <div class="body-wrap">
   
-    <article id="post-intro" class="article article-type-post" itemscope itemprop="blogPost">
   
-    <div class="article-meta">
-      <a href="/2022/06/09/intro/" class="article-date">
-      <time datetime="2022-06-08T18:06:37.000Z" itemprop="datePublished">2022-06-09</time>
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2022" class="archive-year">2022</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+          <div class="article-meta">
+              <a href="/2022/06/09/intro/" class="archive-article-date">
+      <time datetime="2022-06-08T18:06:37.000Z" itemprop="datePublished">06-09</time>
 </a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
+        </div>
+         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2022/06/09/intro/">intro</a>
+      <a class="archive-article-title" href="/2022/06/09/intro/">intro</a>
     </h1>
   
 
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
+        <div class="article-info info-on-archive">
           
-        <p>一直有写博客的想法，总觉得搭建并且维护一个长期有价值的博客很麻烦，会耗费很多的时间和精力，也担心自己水平不够，没什么好写的。</p>
-<p>今天总算跨出了这一步，花了点时间配置了一下个人博客，也想好了该去写一些什么东西，剩下的就是希望自己能够一直坚持写下去，激励个人持续学习和思考，偶尔记录一些个人的随想生活。</p>
-
-      
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
     <div class="article-category tagcloud">
     <a class="article-category-link" href="/categories/by-talk/">by-talk</a>
     </div>
 
 
-      
+          
     <div class="article-tag tagcloud">
         <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/by-talk/" rel="tag">by-talk</a></li></ul>
     </div>
 
-      
-      <div class="clearfix"></div>
-    </div>
-    
+        </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
-  
 </article>
-
-
-
-
-
-
-
-
-
   
   
+    </div></section>
+  
+
+    
+
 </div>
       <footer id="footer">
     <div class="outer">
@@ -357,6 +339,17 @@
         };
     })
 </script>
+
+    <button class="hide-labels">TAG 开关</button>
+    <script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js">
+    </script>
+    <script>
+        $(document).ready(function() {
+            $("button").click(function() {
+                $(".article-info").toggle(200);
+            });
+        });
+    </script>
 
 <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
 </script>
