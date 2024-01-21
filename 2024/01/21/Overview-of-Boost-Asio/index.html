@@ -3,15 +3,22 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Notes On Learning</title>
+  <title>Overview of Boost Asio | Notes On Learning</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Notes On Learning">
-<meta property="og:url" content="http://example.com/index.html">
+  <meta name="description" content="简介简单来说，Boost.Asio是一个跨平台的、主要用于网络和其他一些底层输入&#x2F;输出编程的C++库。asio是一个异步的io库，支持以同步或异步的方式处理事件，也可以用于基于tcp或udp的网络通信。  1）可移植到windows、linux、FreeBSD。2）可扩展性。3）效率很高。4）易使用，类 Socket API 编程模型。  选择一个稳定、靠谱的第三方框架，将很大程度降低工">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Overview of Boost Asio">
+<meta property="og:url" content="http://example.com/2024/01/21/Overview-of-Boost-Asio/index.html">
 <meta property="og:site_name" content="Notes On Learning">
+<meta property="og:description" content="简介简单来说，Boost.Asio是一个跨平台的、主要用于网络和其他一些底层输入&#x2F;输出编程的C++库。asio是一个异步的io库，支持以同步或异步的方式处理事件，也可以用于基于tcp或udp的网络通信。  1）可移植到windows、linux、FreeBSD。2）可扩展性。3）效率很高。4）易使用，类 Socket API 编程模型。  选择一个稳定、靠谱的第三方框架，将很大程度降低工">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://example.com/public/img/overview.png">
+<meta property="article:published_time" content="2024-01-21T15:01:35.000Z">
+<meta property="article:modified_time" content="2024-01-21T16:53:43.225Z">
 <meta property="article:author" content="Kras">
+<meta property="article:tag" content="Boost Asio">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/public/img/overview.png">
   
     <link rel="alternative" href="/atom.xml" title="Notes On Learning" type="application/atom+xml">
   
@@ -29,9 +36,6 @@
   <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   
-    
-    
-  
   
       <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
   
@@ -43,8 +47,8 @@
           rootUrl: '/',
           fancybox: true,
           animate: true,
-          isHome: true,
-          isPost: false,
+          isHome: false,
+          isPost: true,
           isArchive: false,
           isTag: false,
           isCategory: false,
@@ -216,76 +220,7 @@
         </header>                
     </div>
 </nav>
-      <div class="body-wrap">
-  
-    <article id="post-Hello-World-Boost-Asio" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2024/01/22/Hello-World-Boost-Asio/" class="article-date">
-      <time datetime="2024-01-21T16:52:19.000Z" itemprop="datePublished">2024-01-22</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2024/01/22/Hello-World-Boost-Asio/">Hello World Boost Asio</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <h2 id="Using-Building-and-Configuring-Asio"><a href="#Using-Building-and-Configuring-Asio" class="headerlink" title="Using, Building, and Configuring Asio"></a>Using, Building, and Configuring Asio</h2><p>Notice:<br>因为Asio兼容了不同的平台，本系列中默认忽略Windows平台代码<br>只分析IPv4,忽略IPv6部分, 仅分析Linux下Asio环境搭建，编译运行。</p>
-<h3 id="PreWork"><a href="#PreWork" class="headerlink" title="PreWork"></a>PreWork</h3><p>以下是本教程中使用的安装方式，从源代码构建，可以从Boost官网（<a target="_blank" rel="noopener" href="https://www.boost.org/users/history/%EF%BC%89%E4%B8%AD%E4%B8%8B%E8%BD%BDBoost%E6%BA%90%E7%A0%81%EF%BC%8C%E5%B9%B6%E9%80%9A%E8%BF%87%E4%BB%A5%E4%B8%8B%E6%AD%A5%E9%AA%A4%E8%BF%9B%E8%A1%8C%E6%9E%84%E5%BB%BA%E5%92%8C%E5%AE%89%E8%A3%85(%E5%BD%93%E5%89%8D%E4%BD%BF%E7%94%A81.84%E7%89%88%E6%9C%AC)%EF%BC%9A">https://www.boost.org/users/history/）中下载Boost源码，并通过以下步骤进行构建和安装(当前使用1.84版本)：</a></p>
-<blockquote>
-<p>tar -zxvf boost_X_X_X.tar.gz<br>cd boost_X_X_X<br>.&#x2F;bootstrap.sh –prefix&#x3D;&#x2F;usr&#x2F;local<br>.&#x2F;b2<br>sudo .&#x2F;b2 install</p>
-</blockquote>
-
-      
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/Boost-Asio/">Boost Asio</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Boost-Asio/" rel="tag">Boost Asio</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-Overview-of-Boost-Asio" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-Overview-of-Boost-Asio" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
       <a href="/2024/01/21/Overview-of-Boost-Asio/" class="article-date">
@@ -301,12 +236,27 @@
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2024/01/21/Overview-of-Boost-Asio/">Overview of Boost Asio</a>
+    <h1 class="article-title" itemprop="name">
+      Overview of Boost Asio
     </h1>
   
 
       </header>
+      
+      <div class="article-info article-info-post">
+        
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/Boost-Asio/">Boost Asio</a>
+    </div>
+
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Boost-Asio/" rel="tag">Boost Asio</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
       
     
     <div class="article-entry" itemprop="articleBody">
@@ -325,101 +275,215 @@
       
     </div>
     
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/Boost-Asio/">Boost Asio</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Boost-Asio/" rel="tag">Boost Asio</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
   </div>
   
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-Intro" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2024/01/21/Intro/" class="article-date">
-      <time datetime="2024-01-20T19:25:18.000Z" itemprop="datePublished">2024-01-21</time>
-</a>
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2024/01/21/Overview-of-Boost-Asio/">Overview of Boost Asio</a></p>
+        <p><span>文章作者:</span><a href="/" title="访问  的个人博客"></a></p>
+        <p><span>发布时间:</span>2024年01月21日 - 23时01分</p>
+        <p><span>最后更新:</span>2024年01月22日 - 00时53分</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2024/01/21/Overview-of-Boost-Asio/" title="Overview of Boost Asio">http://example.com/2024/01/21/Overview-of-Boost-Asio/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://example.com/2024/01/21/Overview-of-Boost-Asio/　　作者: " title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script src="/js/clipboard.min.js"></script>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" title="中国大陆 (CC BY-NC-SA 3.0 CN)" target = "_blank">"署名-非商用-相同方式共享 3.0"</a> 转载请保留原文链接及作者。
+        </p>
     </div>
+
+
+
+<nav id="article-nav">
   
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
+    <a href="/2024/01/22/Hello-World-Boost-Asio/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
         
+          Hello World Boost Asio
+        
+      </div>
+    </a>
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2024/01/21/Intro/">Intro</a>
-    </h1>
   
+    <a href="/2024/01/21/Intro/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Intro</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
 
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <h2 id="写作动机"><a href="#写作动机" class="headerlink" title=" -写作动机-"></a><center> -写作动机-</h2><p>很久之前就读过刘未鹏Mind Hacks博客中的一篇文章，<a target="_blank" rel="noopener" href="https://mindhacks.cn/2009/02/15/why-you-should-start-blogging-now/">为什么你应该（从现在开始就）写博客</a>, 平常也习惯于用typora追溯很多工作中问题，但也只是限于notes，没有形成博客。总觉得维护博客是一件很花费时间的事情，也担心自己水平不够，没什么好写的。</p>
-<p>今天总算跨出了这一步，刚好前段时间在带一个实习生，很遗憾第一次当mentor，没有一个知识库类的pipline指导，相信在书写的过程中，可以不断debug:refactor之后，也会对加深对知识的一个梳理和思考，希望同时可以帮到刚入门以Boost为工具的网络开发工作的新手。剩下的就是希望自己能够一直坚持写下去。</p>
-
-      
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/By-Talk/">By-Talk</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/By-Talk/" rel="tag">By-Talk</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
   
 </article>
 
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AE%80%E4%BB%8B"><span class="toc-number">1.</span> <span class="toc-text">简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Asio-%E6%8F%90%E4%BE%9B%E4%BA%86%E4%BB%80%E4%B9%88%EF%BC%9F"><span class="toc-number">2.</span> <span class="toc-text">Asio 提供了什么？</span></a></li></ol>
+</div>
+<input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+
+<script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+
+<script>
+    var valueHide = "隐藏目录";
+    var valueShow = "显示目录";
+
+    if ($(".left-col").is(":hidden")) {
+        $("#tocButton").attr("value", valueShow);
+    }
+    $("#tocButton").click(function() {
+        if ($("#toc").is(":hidden")) {
+            $("#tocButton").attr("value", valueHide);
+            $("#toc").slideDown(320);
+        }
+        else {
+            $("#tocButton").attr("value", valueShow);
+            $("#toc").slideUp(350);
+        }
+    })
+    if ($(".toc").length < 1) {
+        $("#toc, #tocButton").hide();
+    }
+</script>
 
 
 
 
+<div class="share">
+    <div class="bdsharebuttonbox">
+    <a href="#" class="bds_more" data-cmd="more"></a>
+    <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+    <a href="#" class="bds_sqq" data-cmd="sqq" title="分享给 QQ 好友"></a>
+    <a href="#" class="bds_copy" data-cmd="copy" title="复制网址"></a>
+    <a href="#" class="bds_mail" data-cmd="mail" title="通过邮件分享"></a>
+    <a href="#" class="bds_weixin" data-cmd="weixin" title="生成文章二维码"></a>
+    </div>
+    <script>
+        window._bd_share_config={
+            "common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+    </script>
+</div>
 
 
 
+    <link rel="stylesheet" type="text/css" href="/css/showshare.css"></head>
+    <div id="share" class="bdsharebuttonbox">
+        <button class="share-toggle-button"><i class="share-icon fa fa-share-alt"></i>
+        </button>
+        <ul class="share-items">
+            <li class="share-item"><a href="#" class="share-button fa fa-weibo" data-cmd="tsina" title="分享到新浪微博"></a></li>
+            <li class="share-item"><a href="#" class="share-button fa fa-weixin" data-cmd="weixin" title="分享到微信"></a></li>
+            <li class="share-item"><a href="#" class="share-button fa fa-qq" data-cmd="sqq" title="分享到QQ好友"></a></li>
+            <li class="share-item"><a href="#" class="share-button fa fa-facebook" data-cmd="fbook" title="分享到Facebook"></a></li>
+            <li class="share-item"><a href="#" class="share-button fa fa-twitter" data-cmd="twi" title="分享到Twitter"></a></li>
+            <li class="share-item"><a href="#" class="share-button fa fa-linkedin" data-cmd="linkedin" title="分享到linkedin"></a></li>
+        </ul>
+    </div>
+    <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="800">
+        <defs>
+            <filter id="goo">
+                <feGaussianBlur in="SourceGraphic" stdDeviation="12" result="blur" />
+                <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 35 -15" result="goo" />
+                <feComposite in="SourceGraphic" in2="goo" operator="atop"/>
+            </filter>
+        </defs>
+    </svg>
+    <!-- 推荐开源CDN来选取需引用的外部JS //-->
+    <script type="text/javascript" src="http://cdn.gbtags.com/jquery/1.11.1/jquery.min.js"></script>
+    <script src="/js/TweenMax.min.js"></script>
+    <script src="/js/TweenMax.js"></script>
+<script>
+    window._bd_share_config = {
+    common : {
+                    bdText : '',
+                    //文本内容
+                    bdDesc : 'Luuman，90后，水瓶座普通男青年！爱折腾，爱运动，更爱游离于错综复杂的编码与逻辑中，无法自拔。相信编程是一门艺术，自诩为游弋在代码里的人生。',
+                    // 描述
+                    bdUrl : 'http://luuman.github.io/',
+                    // URL地址
+                    bdPic : 'https://hexo.io/build/screenshots/spfk-2b30506937.png'
+                    // 图片信息
+                },
+        share: [{
+            "bdSize": 24
+        }]
+    }
+    with(document) 0[(getElementsByTagName('head')[0] || body).appendChild(createElement('script')).src = 'http://bdimg.share.baidu.com/static/api/js/share.js?cdnversion=' + ~ (-new Date() / 36e5)];
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-33765729-1']);
+    _gaq.push(['_setDomainName', 'chuanke.com']);
+    _gaq.push(['_trackPageview']);
+    (function() {
+        var ga = document.createElement('script');
+        ga.type = 'text/javascript';
+        ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(ga, s);
+    })();
+</script>
 
-  
-  
+
+    
+        <div id="gitments"></div>
+<script src="/js/gitment.browser.js"></script>
+<script>
+    var gitment = new Gitment({
+      id: window.location.pathname,
+      owner: 'Kras',
+      repo: 'https://github.com/krasovskiii',
+      oauth: {
+        client_id: '',
+        client_secret: '',
+      },
+    })
+    gitment.render('gitments')
+</script>
+    
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/2024/01/22/Hello-World-Boost-Asio/" title="上一篇: Hello World Boost Asio">
+                <i class="fa fa-angle-left"></i>
+            </a>
+        
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+        
+            <a href="/2024/01/21/Intro/" title="下一篇: Intro">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2024/01/22/Hello-World-Boost-Asio/">Hello World Boost Asio</a></li><li class="post-list-item"><a class="post-list-link" href="/2024/01/21/Overview-of-Boost-Asio/">Overview of Boost Asio</a></li><li class="post-list-item"><a class="post-list-link" href="/2024/01/21/Intro/">Intro</a></li></ul>
+    <script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+    <script>
+        $(".post-list").addClass("toc-article");
+        $(".post-list-item a").attr("target","_blank");
+        $("#post-nav-button > a:nth-child(2)").click(function() {
+            $(".fa-bars, .fa-times").toggle();
+            $(".post-list").toggle(300);
+            if ($(".toc").length > 0) {
+                $("#toc, #tocButton").toggle(200, function() {
+                    if ($(".switch-area").is(":visible")) {
+                        $("#tocButton").attr("value", valueHide);
+                        }
+                    })
+            }
+            else {
+            }
+        })
+    </script>
+
+
+
+    <script>
+        
+    </script>
 </div>
       <footer id="footer">
     <div class="outer">

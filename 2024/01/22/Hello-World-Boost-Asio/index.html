@@ -3,16 +3,19 @@
 <head>
   <meta charset="utf-8">
   
-  <title>categories | Notes On Learning</title>
+  <title>Hello World Boost Asio | Notes On Learning</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="categories">
-<meta property="og:url" content="http://example.com/categories/index.html">
+  <meta name="description" content="Using, Building, and Configuring AsioNotice:因为Asio兼容了不同的平台，本系列中默认忽略Windows平台代码只分析IPv4,忽略IPv6部分, 仅分析Linux下Asio环境搭建，编译运行。 PreWork以下是本教程中使用的安装方式，从源代码构建，可以从Boost官网（https:&#x2F;&#x2F;www.boost.org&#x2F;users&#x2F;history&#x2F;）中下载">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hello World Boost Asio">
+<meta property="og:url" content="http://example.com/2024/01/22/Hello-World-Boost-Asio/index.html">
 <meta property="og:site_name" content="Notes On Learning">
+<meta property="og:description" content="Using, Building, and Configuring AsioNotice:因为Asio兼容了不同的平台，本系列中默认忽略Windows平台代码只分析IPv4,忽略IPv6部分, 仅分析Linux下Asio环境搭建，编译运行。 PreWork以下是本教程中使用的安装方式，从源代码构建，可以从Boost官网（https:&#x2F;&#x2F;www.boost.org&#x2F;users&#x2F;history&#x2F;）中下载">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2024-01-20T19:04:58.000Z">
-<meta property="article:modified_time" content="2024-01-21T14:48:13.153Z">
+<meta property="article:published_time" content="2024-01-21T16:52:19.000Z">
+<meta property="article:modified_time" content="2024-01-21T17:12:01.276Z">
 <meta property="article:author" content="Kras">
+<meta property="article:tag" content="Boost Asio">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="Notes On Learning" type="application/atom+xml">
@@ -43,7 +46,7 @@
           fancybox: true,
           animate: true,
           isHome: false,
-          isPost: false,
+          isPost: true,
           isArchive: false,
           isTag: false,
           isCategory: false,
@@ -215,11 +218,11 @@
         </header>                
     </div>
 </nav>
-      <div class="body-wrap"><article id="page-" class="article article-type-page" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-Hello-World-Boost-Asio" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/categories/index.html" class="article-date">
-      <time datetime="2024-01-20T19:04:58.000Z" itemprop="datePublished">2024-01-21</time>
+      <a href="/2024/01/22/Hello-World-Boost-Asio/" class="article-date">
+      <time datetime="2024-01-21T16:52:19.000Z" itemprop="datePublished">2024-01-22</time>
 </a>
     </div>
   
@@ -232,7 +235,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      categories
+      Hello World Boost Asio
     </h1>
   
 
@@ -240,8 +243,16 @@
       
       <div class="article-info article-info-post">
         
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/Boost-Asio/">Boost Asio</a>
+    </div>
+
 
         
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Boost-Asio/" rel="tag">Boost Asio</a></li></ul>
+    </div>
+
         <div class="clearfix"></div>
       </div>
       
@@ -249,42 +260,12 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-              <style>
-    .article-meta {
-        display: none;
-    }
-    #container .article .article-title {
-        padding-right: 0;
-    }
-    .article-header {
-        padding: 0;
-        padding-top: 26px;
-        border-left: none;
-        text-align: center;
-    }
-    .article-header:hover {
-        border-left: none;
-    }
-    .article-title {
-        font-size: 1.6em
-    }
-    .article-meta {
-        display: none;
-    }
-    .article-entry hr {
-        margin: 0;
-    }
-    #container .article-info-post.article-info {
-      display: none;
-      }
-    #container .article .article-title {
-    padding: 0;
-    }
-</style>
+        <h2 id="Using-Building-and-Configuring-Asio"><a href="#Using-Building-and-Configuring-Asio" class="headerlink" title="Using, Building, and Configuring Asio"></a>Using, Building, and Configuring Asio</h2><p>Notice:<br>因为Asio兼容了不同的平台，本系列中默认忽略Windows平台代码<br>只分析IPv4,忽略IPv6部分, 仅分析Linux下Asio环境搭建，编译运行。</p>
+<h3 id="PreWork"><a href="#PreWork" class="headerlink" title="PreWork"></a>PreWork</h3><p>以下是本教程中使用的安装方式，从源代码构建，可以从Boost官网（<a target="_blank" rel="noopener" href="https://www.boost.org/users/history/%EF%BC%89%E4%B8%AD%E4%B8%8B%E8%BD%BDBoost%E6%BA%90%E7%A0%81%EF%BC%8C%E5%B9%B6%E9%80%9A%E8%BF%87%E4%BB%A5%E4%B8%8B%E6%AD%A5%E9%AA%A4%E8%BF%9B%E8%A1%8C%E6%9E%84%E5%BB%BA%E5%92%8C%E5%AE%89%E8%A3%85(%E5%BD%93%E5%89%8D%E4%BD%BF%E7%94%A81.84%E7%89%88%E6%9C%AC)%EF%BC%9A">https://www.boost.org/users/history/）中下载Boost源码，并通过以下步骤进行构建和安装(当前使用1.84版本)：</a></p>
+<blockquote>
+<p>tar -zxvf boost_X_X_X.tar.gz<br>cd boost_X_X_X<br>.&#x2F;bootstrap.sh –prefix&#x3D;&#x2F;usr&#x2F;local<br>.&#x2F;b2<br>sudo .&#x2F;b2 install</p>
+</blockquote>
 
-
-          
-        
       
       
     </div>
@@ -292,10 +273,69 @@
   </div>
   
     
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2024/01/22/Hello-World-Boost-Asio/">Hello World Boost Asio</a></p>
+        <p><span>文章作者:</span><a href="/" title="访问  的个人博客"></a></p>
+        <p><span>发布时间:</span>2024年01月22日 - 00时52分</p>
+        <p><span>最后更新:</span>2024年01月22日 - 01时12分</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2024/01/22/Hello-World-Boost-Asio/" title="Hello World Boost Asio">http://example.com/2024/01/22/Hello-World-Boost-Asio/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://example.com/2024/01/22/Hello-World-Boost-Asio/　　作者: " title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script src="/js/clipboard.min.js"></script>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" title="中国大陆 (CC BY-NC-SA 3.0 CN)" target = "_blank">"署名-非商用-相同方式共享 3.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
 
+
+
+<nav id="article-nav">
+  
+  
+    <a href="/2024/01/21/Overview-of-Boost-Asio/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Overview of Boost Asio</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
 
   
 </article>
+
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Using-Building-and-Configuring-Asio"><span class="toc-number">1.</span> <span class="toc-text">Using, Building, and Configuring Asio</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#PreWork"><span class="toc-number">1.1.</span> <span class="toc-text">PreWork</span></a></li></ol></li></ol>
+</div>
+<input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+
+<script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+
+<script>
+    var valueHide = "隐藏目录";
+    var valueShow = "显示目录";
+
+    if ($(".left-col").is(":hidden")) {
+        $("#tocButton").attr("value", valueShow);
+    }
+    $("#tocButton").click(function() {
+        if ($("#toc").is(":hidden")) {
+            $("#tocButton").attr("value", valueHide);
+            $("#toc").slideDown(320);
+        }
+        else {
+            $("#tocButton").attr("value", valueShow);
+            $("#toc").slideUp(350);
+        }
+    })
+    if ($(".toc").length < 1) {
+        $("#toc, #tocButton").hide();
+    }
+</script>
+
+
 
 
 <div class="share">
@@ -391,6 +431,37 @@
     
 
 
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+        
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+        
+            <a href="/2024/01/21/Overview-of-Boost-Asio/" title="下一篇: Overview of Boost Asio">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2024/01/22/Hello-World-Boost-Asio/">Hello World Boost Asio</a></li><li class="post-list-item"><a class="post-list-link" href="/2024/01/21/Overview-of-Boost-Asio/">Overview of Boost Asio</a></li><li class="post-list-item"><a class="post-list-link" href="/2024/01/21/Intro/">Intro</a></li></ul>
+    <script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+    <script>
+        $(".post-list").addClass("toc-article");
+        $(".post-list-item a").attr("target","_blank");
+        $("#post-nav-button > a:nth-child(2)").click(function() {
+            $(".fa-bars, .fa-times").toggle();
+            $(".post-list").toggle(300);
+            if ($(".toc").length > 0) {
+                $("#toc, #tocButton").toggle(200, function() {
+                    if ($(".switch-area").is(":visible")) {
+                        $("#tocButton").attr("value", valueHide);
+                        }
+                    })
+            }
+            else {
+            }
+        })
+    </script>
 
 
 

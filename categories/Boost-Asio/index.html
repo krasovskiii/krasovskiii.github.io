@@ -3,11 +3,11 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Notes On Learning</title>
+  <title>Category: Boost Asio | Notes On Learning</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta property="og:type" content="website">
 <meta property="og:title" content="Notes On Learning">
-<meta property="og:url" content="http://example.com/index.html">
+<meta property="og:url" content="http://example.com/categories/Boost-Asio/index.html">
 <meta property="og:site_name" content="Notes On Learning">
 <meta property="og:locale" content="en_US">
 <meta property="article:author" content="Kras">
@@ -29,9 +29,6 @@
   <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   
-    
-    
-  
   
       <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
   
@@ -43,11 +40,11 @@
           rootUrl: '/',
           fancybox: true,
           animate: true,
-          isHome: true,
+          isHome: false,
           isPost: false,
           isArchive: false,
           isTag: false,
-          isCategory: false,
+          isCategory: true,
           open_in_new: false
       }
   </script>
@@ -218,208 +215,91 @@
 </nav>
       <div class="body-wrap">
   
-    <article id="post-Hello-World-Boost-Asio" class="article article-type-post" itemscope itemprop="blogPost">
   
-    <div class="article-meta">
-      <a href="/2024/01/22/Hello-World-Boost-Asio/" class="article-date">
-      <time datetime="2024-01-21T16:52:19.000Z" itemprop="datePublished">2024-01-22</time>
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2024" class="archive-year">2024</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+          <div class="article-meta">
+              <a href="/2024/01/22/Hello-World-Boost-Asio/" class="archive-article-date">
+      <time datetime="2024-01-21T16:52:19.000Z" itemprop="datePublished">01-22</time>
 </a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
+        </div>
+         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2024/01/22/Hello-World-Boost-Asio/">Hello World Boost Asio</a>
+      <a class="archive-article-title" href="/2024/01/22/Hello-World-Boost-Asio/">Hello World Boost Asio</a>
     </h1>
   
 
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
+        <div class="article-info info-on-archive">
           
-        <h2 id="Using-Building-and-Configuring-Asio"><a href="#Using-Building-and-Configuring-Asio" class="headerlink" title="Using, Building, and Configuring Asio"></a>Using, Building, and Configuring Asio</h2><p>Notice:<br>因为Asio兼容了不同的平台，本系列中默认忽略Windows平台代码<br>只分析IPv4,忽略IPv6部分, 仅分析Linux下Asio环境搭建，编译运行。</p>
-<h3 id="PreWork"><a href="#PreWork" class="headerlink" title="PreWork"></a>PreWork</h3><p>以下是本教程中使用的安装方式，从源代码构建，可以从Boost官网（<a target="_blank" rel="noopener" href="https://www.boost.org/users/history/%EF%BC%89%E4%B8%AD%E4%B8%8B%E8%BD%BDBoost%E6%BA%90%E7%A0%81%EF%BC%8C%E5%B9%B6%E9%80%9A%E8%BF%87%E4%BB%A5%E4%B8%8B%E6%AD%A5%E9%AA%A4%E8%BF%9B%E8%A1%8C%E6%9E%84%E5%BB%BA%E5%92%8C%E5%AE%89%E8%A3%85(%E5%BD%93%E5%89%8D%E4%BD%BF%E7%94%A81.84%E7%89%88%E6%9C%AC)%EF%BC%9A">https://www.boost.org/users/history/）中下载Boost源码，并通过以下步骤进行构建和安装(当前使用1.84版本)：</a></p>
-<blockquote>
-<p>tar -zxvf boost_X_X_X.tar.gz<br>cd boost_X_X_X<br>.&#x2F;bootstrap.sh –prefix&#x3D;&#x2F;usr&#x2F;local<br>.&#x2F;b2<br>sudo .&#x2F;b2 install</p>
-</blockquote>
-
-      
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
     <div class="article-category tagcloud">
     <a class="article-category-link" href="/categories/Boost-Asio/">Boost Asio</a>
     </div>
 
 
-      
+          
     <div class="article-tag tagcloud">
         <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Boost-Asio/" rel="tag">Boost Asio</a></li></ul>
     </div>
 
-      
-      <div class="clearfix"></div>
-    </div>
-    
+        </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
-  
 </article>
-
-
-
-
-
-
-
-
-
   
-    <article id="post-Overview-of-Boost-Asio" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2024/01/21/Overview-of-Boost-Asio/" class="article-date">
-      <time datetime="2024-01-21T15:01:35.000Z" itemprop="datePublished">2024-01-21</time>
+    
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+          <div class="article-meta">
+              <a href="/2024/01/21/Overview-of-Boost-Asio/" class="archive-article-date">
+      <time datetime="2024-01-21T15:01:35.000Z" itemprop="datePublished">01-21</time>
 </a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
+        </div>
+         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2024/01/21/Overview-of-Boost-Asio/">Overview of Boost Asio</a>
+      <a class="archive-article-title" href="/2024/01/21/Overview-of-Boost-Asio/">Overview of Boost Asio</a>
     </h1>
   
 
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
+        <div class="article-info info-on-archive">
           
-        <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>简单来说，Boost.Asio是一个跨平台的、主要用于网络和其他一些底层输入&#x2F;输出编程的C++库。asio是一个异步的io库，支持以同步或异步的方式处理事件，也可以用于基于tcp或udp的网络通信。</p>
-<blockquote>
-<p>1）可移植到windows、linux、FreeBSD。<br>2）可扩展性。<br>3）效率很高。<br>4）易使用，类 Socket API 编程模型。</p>
-</blockquote>
-<p>选择一个稳定、靠谱的第三方框架，将很大程度降低工作量、提高开发效率，将精力重点放在业务逻辑，避免重复造轮子（随意修改开源库造轮子，可适当增加团队成员的KPI(bushi)）</p>
-<h2 id="Asio-提供了什么？"><a href="#Asio-提供了什么？" class="headerlink" title="Asio 提供了什么？"></a>Asio 提供了什么？</h2><p>Asio概览</p>
-<p><img src="/../../public/img/overview.png" alt="overiew of asio"></p>
-<p>文章按照<a target="_blank" rel="noopener" href="https://think-async.com/Asio/asio-1.28.0/doc/">https://think-async.com/Asio/asio-1.28.0/doc/</a><br>中结构对asio进行学习，overview类的文章等后续学习完再来填坑。</p>
-
-      
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
     <div class="article-category tagcloud">
     <a class="article-category-link" href="/categories/Boost-Asio/">Boost Asio</a>
     </div>
 
 
-      
+          
     <div class="article-tag tagcloud">
         <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Boost-Asio/" rel="tag">Boost Asio</a></li></ul>
     </div>
 
-      
-      <div class="clearfix"></div>
-    </div>
-    
+        </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
-  
 </article>
-
-
-
-
-
-
-
-
-
   
-    <article id="post-Intro" class="article article-type-post" itemscope itemprop="blogPost">
   
-    <div class="article-meta">
-      <a href="/2024/01/21/Intro/" class="article-date">
-      <time datetime="2024-01-20T19:25:18.000Z" itemprop="datePublished">2024-01-21</time>
-</a>
-    </div>
+    </div></section>
   
-  <div class="article-inner">
+
     
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2024/01/21/Intro/">Intro</a>
-    </h1>
-  
 
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <h2 id="写作动机"><a href="#写作动机" class="headerlink" title=" -写作动机-"></a><center> -写作动机-</h2><p>很久之前就读过刘未鹏Mind Hacks博客中的一篇文章，<a target="_blank" rel="noopener" href="https://mindhacks.cn/2009/02/15/why-you-should-start-blogging-now/">为什么你应该（从现在开始就）写博客</a>, 平常也习惯于用typora追溯很多工作中问题，但也只是限于notes，没有形成博客。总觉得维护博客是一件很花费时间的事情，也担心自己水平不够，没什么好写的。</p>
-<p>今天总算跨出了这一步，刚好前段时间在带一个实习生，很遗憾第一次当mentor，没有一个知识库类的pipline指导，相信在书写的过程中，可以不断debug:refactor之后，也会对加深对知识的一个梳理和思考，希望同时可以帮到刚入门以Boost为工具的网络开发工作的新手。剩下的就是希望自己能够一直坚持写下去。</p>
-
-      
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/By-Talk/">By-Talk</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/By-Talk/" rel="tag">By-Talk</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-  
 </div>
       <footer id="footer">
     <div class="outer">
@@ -488,6 +368,17 @@
         };
     })
 </script>
+
+    <button class="hide-labels">TAG 开关</button>
+    <script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js">
+    </script>
+    <script>
+        $(document).ready(function() {
+            $("button").click(function() {
+                $(".article-info").toggle(200);
+            });
+        });
+    </script>
 
 <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
 </script>
